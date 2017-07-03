@@ -240,6 +240,7 @@
 			buildSettings = {
 				DEVELOPMENT_TEAM = H793M2BKCY;
 				INFOPLIST_FILE = InternalFloppyDrive/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				MODULE_NAME = me.sydneyerickson.InternalFloppyDrive;
 				MODULE_START = InternalFloppyDrive_start;
 				MODULE_STOP = InternalFloppyDrive_stop;
@@ -255,6 +256,7 @@
 			buildSettings = {
 				DEVELOPMENT_TEAM = H793M2BKCY;
 				INFOPLIST_FILE = InternalFloppyDrive/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				MODULE_NAME = me.sydneyerickson.InternalFloppyDrive;
 				MODULE_START = InternalFloppyDrive_start;
 				MODULE_STOP = InternalFloppyDrive_stop;
