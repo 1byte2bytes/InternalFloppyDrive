@@ -61,10 +61,10 @@ kern_return_t InternalFloppyDrive_start(kmod_info_t * ki, void *d)
         int c;
         c = inb(MAIN_STATUS_REGISTER);
         if (c != 0x90) {
-            printf("Incompatible floppy drive controller found. Exiting.");
+            printf("Incompatible floppy drive controller found. Exiting.\n");
             return KERN_ABORTED;
         } else {
-            printf("Found an 82077AA FDC.");
+            printf("Found an 82077AA FDC.\n");
         }
     }
     
