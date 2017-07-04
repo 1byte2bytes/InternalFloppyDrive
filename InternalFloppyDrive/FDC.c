@@ -45,10 +45,10 @@ int FDC_reset(int DriveType) {
     }
     
     // Configure the FDC
+    // TODO: actually send configure data
     outb(DATA_FIFO, CONFIGURE);
     printf("Sent configure signal\n");
     
-    // TODO: actually send configure data
     // Lock our settings
     outb(DATA_FIFO, LOCK);
     printf("Sent lock signal\n");
