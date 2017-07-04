@@ -47,10 +47,8 @@ kern_return_t InternalFloppyDrive_start(kmod_info_t * ki, void *d)
     // Print floppy disk info
     char *drive_type[6] = { "no floppy drive", "360kb 5.25in floppy drive", "1.2mb 5.25in floppy drive", "720kb 3.5in", "1.44mb 3.5in", "2.88mb 3.5in"};
     printf("Floppy drive A is an:\n");
-    printf("%c\n", a);
     printf("%s", drive_type[a]);
     printf("\nFloppy drive B is an:\n");
-    printf("%c\n", b);
     printf("%s", drive_type[b]);
     printf("\n");
     
