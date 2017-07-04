@@ -37,7 +37,7 @@ int FDC_reset(int DriveType) {
     
     if (DriveType != 4) {
         printf("Floppy drive is of a non-compatible size at the moment.\n");
-        return KERN_ABORTED;
+        return -1;
     } else {
         // Set speed to 500kb for 1.44MB floppies
         outb(CONFIGURATION_CONTROL_REGISTER, 0x00);
