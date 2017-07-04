@@ -83,7 +83,7 @@ kern_return_t InternalFloppyDrive_start(kmod_info_t * ki, void *d)
             printf("Got controller: %d - wanted %d\n", c, 0x90);
             
             if (DoFDCCheck == false) {
-                printf("Floppy Disk Controller check has been disabled. Procced at your own risk.");
+                printf("Floppy Disk Controller check has been disabled. Procced at your own risk.\n");
             } else {
                 return KERN_ABORTED;
             }
