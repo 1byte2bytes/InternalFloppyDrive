@@ -93,13 +93,16 @@ kern_return_t InternalFloppyDrive_start(kmod_info_t * ki, void *d)
         // Reset the controller
         outb(DIGITAL_OUTPUT_REGISTER, 0x00);
         outb(DIGITAL_OUTPUT_REGISTER, 0x0C);
+        printf("Floppy drive reset command sent");
         // TODO: Wait for IRQ interrupt
+        printf("Floppy drive reset IRQ recieved");
         // Send 4 sense interrupts
         // TODO: proper send_byte procedure
         for ( int i = 4; i > 0; i-- ) {
             outb(DATA_FIFO, SENSE_INTERRUPT);
             inb(DATA_FIFO);
             inb(DATA_FIFO);
+            print("Sent sense_interrupt signal");
         }
         
         if (a != 5) {
@@ -108,12 +111,15 @@ kern_return_t InternalFloppyDrive_start(kmod_info_t * ki, void *d)
         } else {
             // Set speed to 500kb for 1.44MB floppies
             outb(CONFIGURATION_CONTROL_REGISTER, 0x00);
+            printf("Set speed to 500kb - 1.44MB 3.5\"");
         }
         
         // Configure the FDC
         outb(DATA_FIFO, CONFIGURE);
+        printf("Sent configure signal");
         // Lock our settings
         outb(DATA_FIFO, LOCK);
+        printf("Sent lock signal");
     }
     
     return KERN_SUCCESS;
