@@ -62,7 +62,7 @@ kern_return_t InternalFloppyDrive_start(kmod_info_t * ki, void *d)
         c = inb(MAIN_STATUS_REGISTER);
         if (c != 0x90) {
             printf("Incompatible floppy drive controller found. Exiting.\n");
-            printf("Got controller: %d - wanted %d", c, 0x90);
+            printf("Got controller: %d - wanted %d\n", c, 0x90);
             
             return KERN_ABORTED;
         } else {
