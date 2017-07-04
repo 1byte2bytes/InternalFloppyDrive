@@ -15,7 +15,7 @@ void FDC_turn_motor_on() {
 }
 
 void FDC_turn_motor_off() {
-    outb(DIGITAL_OUTPUT_REGISTER, 0x10);
+    outb(DIGITAL_OUTPUT_REGISTER, 0x0C);
 }
 
 int FDC_reset(int DriveType) {
