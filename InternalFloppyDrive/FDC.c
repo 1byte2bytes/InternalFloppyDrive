@@ -10,11 +10,11 @@
 #include "IO.h"
 
 void FDC_turn_motor_on() {
-    outb(DIGITAL_OUTPUT_REGISTER, 0x1C);
+    outb(DIGITAL_OUTPUT_REGISTER, 0x10);
 }
 
 void FDC_turn_motor_off() {
-    outb(DIGITAL_OUTPUT_REGISTER, 0x0C);
+    outb(DIGITAL_OUTPUT_REGISTER, 0x10);
 }
 
 int FDC_reset(int DriveType) {
