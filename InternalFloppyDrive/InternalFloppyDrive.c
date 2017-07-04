@@ -90,6 +90,30 @@ kern_return_t InternalFloppyDrive_start(kmod_info_t * ki, void *d)
         } else {
             printf("Found an 82077AA FDC.\n");
         }
+        // Reset the controller
+        outb(DIGITAL_OUTPUT_REGISTER, 0x00);
+        outb(DIGITAL_OUTPUT_REGISTER, 0x0C);
+        // TODO: Wait for IRQ interrupt
+        // Send 4 sense interrupts
+        // TODO: proper send_byte procedure
+        for ( int i = 4; i > 0; i-- ) {
+            outb(DATA_FIFO, SENSE_INTERRUPT);
+            inb(DATA_FIFO);
+            inb(DATA_FIFO);
+        }
+        
+        if (a != 5) {
+            printf("Floppy drive is of a non-compatible size at the moment.\n");
+            return KERN_ABORTED;
+        } else {
+            // Set speed to 500kb for 1.44MB floppies
+            outb(CONFIGURATION_CONTROL_REGISTER, 0x00);
+        }
+        
+        // Configure the FDC
+        outb(DATA_FIFO, CONFIGURE);
+        // Lock our settings
+        outb(DATA_FIFO, LOCK);
     }
     
     return KERN_SUCCESS;
