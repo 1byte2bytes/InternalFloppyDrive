@@ -8,6 +8,7 @@
 
 #include "FDC.h"
 #include "IO.h"
+#include "Sleep_Bridge.hpp"
 
 void FDC_turn_motor_on() {
     outb(DIGITAL_OUTPUT_REGISTER, 0x10);
@@ -25,6 +26,7 @@ int FDC_reset(int DriveType) {
     
     // TODO: Wait for IRQ interrupt
     printf("Floppy drive reset IRQ recieved\n");
+    sleep(1000);
     
     // Send 4 sense interrupts
     // TODO: proper send_byte procedure
