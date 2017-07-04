@@ -47,5 +47,6 @@ enum FloppyCommands
 };
 
 void FDC_turn_motor_on();
+int FDC_reset();
 
 #endif /* FDC_h */
