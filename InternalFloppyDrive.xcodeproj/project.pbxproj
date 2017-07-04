@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F16985881F0B60BD0056D8F2 /* FDC_Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = F16985871F0B60BD0056D8F2 /* FDC_Constants.h */; };
 		F1EBA5211F0B0DAD0035B5DA /* InternalFloppyDrive.c in Sources */ = {isa = PBXBuildFile; fileRef = F1EBA5201F0B0DAD0035B5DA /* InternalFloppyDrive.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F16985871F0B60BD0056D8F2 /* FDC_Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDC_Constants.h; sourceTree = "<group>"; };
 		F1EBA51D1F0B0DAD0035B5DA /* InternalFloppyDrive.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InternalFloppyDrive.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1EBA5201F0B0DAD0035B5DA /* InternalFloppyDrive.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = InternalFloppyDrive.c; sourceTree = "<group>"; };
 		F1EBA5221F0B0DAD0035B5DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 			children = (
 				F1EBA5201F0B0DAD0035B5DA /* InternalFloppyDrive.c */,
 				F1EBA5221F0B0DAD0035B5DA /* Info.plist */,
+				F16985871F0B60BD0056D8F2 /* FDC_Constants.h */,
 			);
 			path = InternalFloppyDrive;
 			sourceTree = "<group>";
@@ -59,6 +62,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F16985881F0B60BD0056D8F2 /* FDC_Constants.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,8 @@
 #include <sys/systm.h>
 #include <mach/mach_types.h>
 
+#include "FDC_Constants.h"
+
 /* OSDev stuff */
 static inline void outb(uint16_t port, uint8_t val)
 {
@@ -43,12 +45,26 @@ kern_return_t InternalFloppyDrive_start(kmod_info_t * ki, void *d)
     char b = c & 0xF; // get the low nibble by ANDing out the high nibble
     
     // Print floppy disk info
-    char *drive_type[5] = { "no floppy drive", "360kb 5.25in floppy drive", "1.2mb 5.25in floppy drive", "720kb 3.5in", "1.44mb 3.5in", "2.88mb 3.5in"};
+    char *drive_type[6] = { "no floppy drive", "360kb 5.25in floppy drive", "1.2mb 5.25in floppy drive", "720kb 3.5in", "1.44mb 3.5in", "2.88mb 3.5in"};
     printf("Floppy drive A is an:\n");
-    printf(drive_type[a]);
+    printf("%c\n", a);
+    printf("%s", drive_type[a]);
     printf("\nFloppy drive B is an:\n");
-    printf(drive_type[b]);
+    printf("%c\n", b);
+    printf("%s", drive_type[b]);
     printf("\n");
+    
+    if (a != 0) {
+        // We have a main floppy drive!
+        // Check the version of the FDC
+        outb(DATA_FIFO, VERSION);
+        int c;
+        c = inb(MAIN_STATUS_REGISTER);
+        if (c != 0x90) {
+            printf("Incompatible floppy drive controller found. Exiting.");
+            return -1;
+        }
+    }
     
     return KERN_SUCCESS;
 }
