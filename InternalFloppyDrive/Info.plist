@@ -22,6 +22,8 @@
 	<string>Copyright © 2017 Sydney Erickson. All rights reserved.</string>
 	<key>OSBundleLibraries</key>
 	<dict>
+		<key>com.apple.kpi.iokit</key>
+		<string>10.0</string>
 		<key>com.apple.kpi.libkern</key>
 		<string>10.0</string>
 	</dict>
