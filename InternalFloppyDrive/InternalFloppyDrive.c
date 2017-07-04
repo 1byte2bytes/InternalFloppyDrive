@@ -11,6 +11,26 @@
 
 #include "FDC_Constants.h"
 
+typedef int bool;
+enum { false, true };
+
+/*
+ __          __     _____  _   _ _____ _   _  _____
+ \ \        / /\   |  __ \| \ | |_   _| \ | |/ ____|
+  \ \  /\  / /  \  | |__) |  \| | | | |  \| | |  __
+   \ \/  \/ / /\ \ |  _  /| . ` | | | | . ` | | |_ |
+    \  /\  / ____ \| | \ \| |\  |_| |_| |\  | |__| |
+     \/  \/_/    \_\_|  \_\_| \_|_____|_| \_|\_____|
+ 
+ SET THIS TO FALSE AT YOUR OWN RISK. DISABLING THIS CHECK MIGHT
+ ALLOW THE DRIVER TO CONTROL UNSTABLE DRIVES, WHICH MAY RESULT
+ IN AN UNSTABLE SYSTEM OR DESTROYING YOUR DRIVE.
+*/
+
+bool DoFDCCheck = false;
+ 
+ 
+
 /* OSDev stuff */
 static inline void outb(uint16_t port, uint8_t val)
 {
@@ -62,7 +82,11 @@ kern_return_t InternalFloppyDrive_start(kmod_info_t * ki, void *d)
             printf("Incompatible floppy drive controller found. Exiting.\n");
             printf("Got controller: %d - wanted %d\n", c, 0x90);
             
-            return KERN_ABORTED;
+            if (DoFDCCheck == false) {
+                printf("Floppy Disk Controller check has been disabled. Procced at your own risk.");
+            } else {
+                return KERN_ABORTED;
+            }
         } else {
             printf("Found an 82077AA FDC.\n");
         }
