@@ -23,7 +23,7 @@
 	<key>OSBundleLibraries</key>
 	<dict>
 		<key>com.apple.kpi.libkern</key>
-		<string>16.6</string>
+		<string>16.0</string>
 	</dict>
 </dict>
 </plist>
