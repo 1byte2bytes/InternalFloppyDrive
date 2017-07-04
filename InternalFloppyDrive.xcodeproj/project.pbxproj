@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F16985881F0B60BD0056D8F2 /* FDC_Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = F16985871F0B60BD0056D8F2 /* FDC_Constants.h */; };
+		F13C1D461F0C2295006109FA /* FDC.c in Sources */ = {isa = PBXBuildFile; fileRef = F13C1D441F0C2295006109FA /* FDC.c */; };
+		F13C1D471F0C2295006109FA /* FDC.h in Headers */ = {isa = PBXBuildFile; fileRef = F13C1D451F0C2295006109FA /* FDC.h */; };
+		F13C1D4A1F0C22C7006109FA /* IO.c in Sources */ = {isa = PBXBuildFile; fileRef = F13C1D481F0C22C7006109FA /* IO.c */; };
+		F13C1D4B1F0C22C7006109FA /* IO.h in Headers */ = {isa = PBXBuildFile; fileRef = F13C1D491F0C22C7006109FA /* IO.h */; };
 		F1EBA5211F0B0DAD0035B5DA /* InternalFloppyDrive.c in Sources */ = {isa = PBXBuildFile; fileRef = F1EBA5201F0B0DAD0035B5DA /* InternalFloppyDrive.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F16985871F0B60BD0056D8F2 /* FDC_Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDC_Constants.h; sourceTree = "<group>"; };
+		F13C1D441F0C2295006109FA /* FDC.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = FDC.c; sourceTree = "<group>"; };
+		F13C1D451F0C2295006109FA /* FDC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDC.h; sourceTree = "<group>"; };
+		F13C1D481F0C22C7006109FA /* IO.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IO.c; sourceTree = "<group>"; };
+		F13C1D491F0C22C7006109FA /* IO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IO.h; sourceTree = "<group>"; };
 		F1EBA51D1F0B0DAD0035B5DA /* InternalFloppyDrive.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InternalFloppyDrive.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1EBA5201F0B0DAD0035B5DA /* InternalFloppyDrive.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = InternalFloppyDrive.c; sourceTree = "<group>"; };
 		F1EBA5221F0B0DAD0035B5DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,7 +56,10 @@
 			children = (
 				F1EBA5201F0B0DAD0035B5DA /* InternalFloppyDrive.c */,
 				F1EBA5221F0B0DAD0035B5DA /* Info.plist */,
-				F16985871F0B60BD0056D8F2 /* FDC_Constants.h */,
+				F13C1D441F0C2295006109FA /* FDC.c */,
+				F13C1D451F0C2295006109FA /* FDC.h */,
+				F13C1D481F0C22C7006109FA /* IO.c */,
+				F13C1D491F0C22C7006109FA /* IO.h */,
 			);
 			path = InternalFloppyDrive;
 			sourceTree = "<group>";
@@ -62,7 +71,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F16985881F0B60BD0056D8F2 /* FDC_Constants.h in Headers */,
+				F13C1D471F0C2295006109FA /* FDC.h in Headers */,
+				F13C1D4B1F0C22C7006109FA /* IO.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1EBA5211F0B0DAD0035B5DA /* InternalFloppyDrive.c in Sources */,
+				F13C1D4A1F0C22C7006109FA /* IO.c in Sources */,
+				F13C1D461F0C2295006109FA /* FDC.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

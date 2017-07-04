@@ -9,7 +9,7 @@
 #include <sys/systm.h>
 #include <mach/mach_types.h>
 
-#include "FDC_Constants.h"
+#include "FDC.h"
 
 typedef int bool;
 enum { false, true };
@@ -102,7 +102,7 @@ kern_return_t InternalFloppyDrive_start(kmod_info_t * ki, void *d)
             outb(DATA_FIFO, SENSE_INTERRUPT);
             inb(DATA_FIFO);
             inb(DATA_FIFO);
-            print("Sent sense_interrupt signal");
+            printf("Sent sense_interrupt signal");
         }
         
         if (a != 5) {
@@ -117,6 +117,7 @@ kern_return_t InternalFloppyDrive_start(kmod_info_t * ki, void *d)
         // Configure the FDC
         outb(DATA_FIFO, CONFIGURE);
         printf("Sent configure signal");
+        // TODO: actually send configure data
         // Lock our settings
         outb(DATA_FIFO, LOCK);
         printf("Sent lock signal");

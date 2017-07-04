@@ -1,13 +1,13 @@
 //
-//  FDC_Constants.h
+//  FDC.h
 //  InternalFloppyDrive
 //
-//  Created by Sydney Erickson on 7/3/17.
+//  Created by Sydney Erickson on 7/4/17.
 //  Copyright © 2017 Sydney Erickson. All rights reserved.
 //
 
-#ifndef FDC_Constants_h
-#define FDC_Constants_h
+#ifndef FDC_h
+#define FDC_h
 
 enum FloppyRegisters
 {
@@ -46,4 +46,6 @@ enum FloppyCommands
     SCAN_HIGH_OR_EQUAL =         29
 };
 
-#endif /* FDC_Constants_h */
+void FDC_turn_motor_on();
+
+#endif /* FDC_h */
