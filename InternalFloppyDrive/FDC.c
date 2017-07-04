@@ -26,7 +26,7 @@ int FDC_reset(int DriveType) {
     
     // TODO: Wait for IRQ interrupt
     printf("Floppy drive reset IRQ recieved\n");
-    sleep(1000);
+    sleep(100);
     
     // Send 4 sense interrupts
     // TODO: proper send_byte procedure
